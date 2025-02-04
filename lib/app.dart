@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teachers_app/config/resource/app_theme.dart';
+import 'package:teachers_app/config/router/routes.dart';
+import 'package:teachers_app/features/calender/bloc/calender_bloc.dart';
+import 'package:teachers_app/features/classes/bloc/classes_detail_bloc.dart';
+import 'package:teachers_app/features/notification/bloc/notification_bloc.dart';
+import 'package:teachers_app/features/signin/bloc/register_bloc.dart';
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late final AppRouter _router;
+
+  @override
+  void initState() {
+    super.initState();
+    _router = AppRouter();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => SignInBloc(),
+          ),
+          BlocProvider(
+            create: (context) => CalenderBloc(),
+          ),
+          BlocProvider(
+            create: (context) => ClassesDetailBloc(),
+          ),
+          BlocProvider(
+            create: (context) => NotificationBloc(),
+          ),
+        ],
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: "Teachers app",
+          theme: AppThemes.lightTheme,
+          routerConfig: _router.router,
+        ));
+  }
+}

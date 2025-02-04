@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558349401231",
+    "project_id": "msub-lms",
+    "storage_bucket": "msub-lms.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558349401231:android:b6c82a2df0f20d01e984fa",
+        "android_client_info": {
+          "package_name": "com.example.teachers_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE0VqJhssshbJsRbUzHJvoCbQSNzIOIIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
